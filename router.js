@@ -6,16 +6,7 @@ app.Routers = Backbone.Router.extend({
     '*filter' : 'setFilter'
     "/" : "getTodos",
     "/todo/:id" : "getTodo",
-    "/create" : "create"
+    "/create" : "createTodoOnEnter"
   },
 
-  getTodos: function(){
-    //list all todos
-  },
-  getTodo: function(todoId){
-    //details about one todo
-  },
-  create: function(){
-    //creating new todo
-  }
 })
