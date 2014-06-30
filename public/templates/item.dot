@@ -1,0 +1,9 @@
+
+<!-- item template -->
+
+<script tyoe="text/template" id="item-template">
+  <div class="view">
+    <input class="toggle" type="chechbox">
+    <label><%- title %></label>
+  </div>
+</script>
