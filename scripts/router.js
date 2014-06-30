@@ -7,6 +7,6 @@ app.Routers = Backbone.Router.extend({
     "/" : "getTodos",
     "/todo/:id" : "getTodo",
     "/create" : "createTodoOnEnter"
-  },
+  }
 
 })
