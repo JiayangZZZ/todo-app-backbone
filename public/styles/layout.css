@@ -1,9 +1,22 @@
+
 .header {
 
 }
 
 .landing-header-container {
   margin: 0 auto;
-  width: 300px;
-  background-color: #efefef;
+  width: 600px;
+  background-color: #dedede;
+  padding: 20px 0;
+}
+
+.title {
+  text-align: center;
+  font-weight: 200;
+}
+
+.body-container {
+  margin: 0 auto;
+  width: 600px;
+  background-color: white;
 }

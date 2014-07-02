@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    compass : { // Target options
+      dev : {
+        options: {
+          sassDir : '/public/styles',
+          cssDir : '/public/styles/build',
+          noLineComments : true,
+          debugInfo : true
+        }
+      }
+    },
 
     watch : {
       styles : { // Target options
@@ -31,7 +41,7 @@ module.exports = function(grunt) {
         src : [
           '**/*.dot'
         ],
-        dest : '/public/templates/tmpl.js'
+        dest : './public/templates/tmpl.js'
       }
     }
   });

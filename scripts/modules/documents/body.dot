@@ -1,0 +1,13 @@
+<!--
+
+contaienr
+
+-->
+
+<div class="body-container">
+  <ul class="todo-list">
+    {{~it.todos : todo : index}}
+      <li>{{=todo.title}}</li>
+    {{~}}
+  </ul>
+</div>

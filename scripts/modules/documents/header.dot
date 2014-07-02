@@ -4,6 +4,6 @@ header
 
 -->
 
-<section class="landing-header-container">
-  <h1 class="title">TODOS</h1>
-</section>
+<div class="landing-header-container">
+  <h1 class="title">{{=it.title}}</h1>
+</div>
