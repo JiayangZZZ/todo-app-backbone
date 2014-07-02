@@ -24,14 +24,14 @@ module.exports = function(grunt) {
       dist: {
         options: {
           variable : 'tmpl',
-          root : __dirname + '/app',
+          root : __dirname + '/scripts/modules',
           requirejs : true,
           node : true
         },
         src : [
           '**/*.dot'
         ],
-        dest : 'todo-app-backbone/public/tmpl.js'
+        dest : '/public/templates/tmpl.js'
       }
     }
   });

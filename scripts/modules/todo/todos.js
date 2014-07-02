@@ -1,4 +1,3 @@
-
 //collection of todos
 
 app.Todos = Backbone.Collection.extend({

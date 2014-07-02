@@ -1,18 +1,5 @@
 
 
-var express = require('express')
-  , http = require('http')
-  , requirejs = require('requirejs');
-
-var app = express();
-
-app.configure(function() {
-  app.set('port', process.env.PORT || 3300);
-  app.use(express.logger('dev'));
-  app.use(express.static(__dirname));
-  app.use(express.bodyParser());
-});
-
 requirejs.config({
   baseUrl : '__dirname',
   paths : {
@@ -22,6 +9,8 @@ requirejs.config({
   }
 })
 
-http.createServer(app).listen(app.get('port'), function() {
-  console.log('Server started on port: ' + app.get('port'));
-});
+var shirt = require('models/shirt.js');
+// var shirt = require('shirt');
+var todo = require('models/todo.js');
+console.log(todo);
+console.log(shirt);
