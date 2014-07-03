@@ -13,8 +13,6 @@ app.configure(function() {
   app.use(express.bodyParser());
 });
 
-requirejs('scripts/main.js');
-
 app.get('/', function(req, res) {
   res.send(tmpl.html({
     header : tmpl.header({ title : "TODO"}),
@@ -30,7 +28,6 @@ app.get('/', function(req, res) {
     }]})
   }));
 })
-
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Server started on port: ' + app.get('port'));

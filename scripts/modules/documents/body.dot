@@ -5,9 +5,13 @@ contaienr
 -->
 
 <div class="body-container">
+  <div class="create">
+    <input id="new-todo" placeholder="What needs to be done?">
+  </div>
+  <div id="container">loading...</div>
   <ul class="todo-list">
     {{~it.todos : todo : index}}
-      <li>{{=todo.title}}</li>
+      <li class="todo-list-item">{{=todo.title}}</li>
     {{~}}
   </ul>
 </div>

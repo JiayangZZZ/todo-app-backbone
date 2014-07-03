@@ -1,28 +1,32 @@
 
 //--- model of todo
 
-// define([
-//   'jquery',
-//   'underscore',
-//   'backbone'
-// ], function() {
-//   app.Todo = Backbone.Model.extend({
-//     defaults: {
-//       title : '',
-//       description : '',
-//       status : 0
-//     }
-//   });
-//   return(new Todo());
-// })
+define([
 
-define(function() {
-  var Todo = function() {
-    this.title = 'TITLE',
-    this.description = 'DESCRIPTION'
-  };
+  'backbone'
+
+], function(
+
+  Backbone
+
+) {
+  var Todo = Backbone.Model.extend({
+    defaults: {
+      title : 'TITLE!!!',
+      description : 'DESCRIPTION',
+      status : 0
+    }
+  });
   return(new Todo());
-});
+})
+
+// define(function() {
+//   var Todo = function() {
+//     this.title = 'TITLE',
+//     this.description = 'DESCRIPTION'
+//   };
+//   return(new Todo());
+// });
 
 //Todo is a convention class
 //todo is an instance variable
