@@ -10,14 +10,18 @@ define([
   Backbone
 
 ) {
+
+  console.log("Todo todo!");
   var Todo = Backbone.Model.extend({
     defaults: {
       title : 'TITLE!!!',
-      description : 'DESCRIPTION',
-      status : 0
+      description : 'DESCRIPTION'
     }
   });
-  return(new Todo());
+  var todo1 = new Todo({ title: 'TITLE1', description: 'DESCRIPTION1'});
+  var todo2 = new Todo({ title: 'TITLE2', description: 'DESCRIPTION2'});
+  var todo3 = new Todo({ title: 'TITLE3', description: 'DESCRIPTION3'});
+
 })
 
 // define(function() {

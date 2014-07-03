@@ -8,10 +8,18 @@ contaienr
   <div class="create">
     <input id="new-todo" placeholder="What needs to be done?">
   </div>
+  <!-- testing view from main.js -->
   <div id="container">loading...</div>
+
+  <!-- hard coded todo list -->
   <ul class="todo-list">
     {{~it.todos : todo : index}}
       <li class="todo-list-item">{{=todo.title}}</li>
     {{~}}
   </ul>
+
+  <!-- real todo list -->
+  <script type="text/template" id="todo-list">
+    <p> this is from template, pretending to be a todo list</p>
+  </script>
 </div>

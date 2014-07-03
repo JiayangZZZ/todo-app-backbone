@@ -5,11 +5,11 @@ define([
   'todo/todo',
   'backbone'
 
-  ], function(){
+  ], function( Todo, Backbone ){
     var Todos = Backbone.collection.extend({
-      model: Todo,
-    })
-    return(new Todos());
+      model: Todo.Todo
+    });
+    var todos = new Todos( todo1, todo2, todo3);
   })
 
 

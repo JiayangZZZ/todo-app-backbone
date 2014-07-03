@@ -23,7 +23,8 @@ require([
   'jquery',
   'backbone',
   'underscore',
-  'todo/todo'
+  'todo/todo',
+  'todo/todoView'
 
 ], function() {
   var todo = require("todo/todo");
