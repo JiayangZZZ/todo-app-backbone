@@ -16,6 +16,7 @@
     <section class="body">
       {{=it.body}}
     </section>
+    <section><p> somehting</p></section>
     <script data-main="scripts/main" src="scripts/modules/vendor/require.js"></script>
   </body>
 </html>
