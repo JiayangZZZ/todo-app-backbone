@@ -23,27 +23,51 @@ require([
   'jquery',
   'backbone',
   'underscore',
-  'todo/todo',
-  'todo/todoView'
+  'todo/todoView',
+  'todo/todos',
+  'todo/test',
+  'todo/todo'
 
-], function() {
-  var todo = require("todo/todo");
-  console.log('Wof wof!');
-  // console.log(todo);
+], function(
+
+  jquery,
+  Backbone,
+  _,
+  todoView,
+  Todos,
+  test,
+  Todo
+
+  ) {
 
   var AppView = Backbone.View.extend({
     el: '#container',
+    template: _.template( $("#todo-list-tmpl").html()),
     initialize: function(){
       this.render();
     },
     render: function(){
-      this.$el.html("hello world");
+      this.$el.html(this.template(this.model.toJSON()));
+      return(this);
     }
   });
 
-  var appView = new AppView();
+  var TEST = new Todo({
+    title: "titleadfadsfa",
+    description: "desdkjflskdjf"
+  });
 
-  console.log('Bones bones!');
+  var appView = new AppView({model: TEST});
+  var todoView = new todoView();
+
+
+  test.forEach(function(todo){ console.log(todo.title) });
+  // console.log(test.toJSON());
+
+  var todosFromServer = new Todos();
+  todosFromServer.fetch();
+  console.log(todosFromServer.fetch());
+
 
 });
 

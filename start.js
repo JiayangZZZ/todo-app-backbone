@@ -25,7 +25,8 @@ app.get('/', function(req, res) {
     },{
       title: "three",
       description: "threethree"
-    }]})
+    }]}),
+    template : tmpl.todoList()
   }));
 })
 

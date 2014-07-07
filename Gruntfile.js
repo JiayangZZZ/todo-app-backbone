@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     compass : { // Target options
       dev : {
         options: {
-          sassDir : '/public/styles',
-          cssDir : '/public/styles/build',
+          sassDir : 'public/styles',
+          cssDir : 'public/styles/build',
           noLineComments : true,
           debugInfo : true
         }
@@ -46,6 +46,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-dot-compiler');
   grunt.loadNpmTasks('grunt-contrib-watch');
 };

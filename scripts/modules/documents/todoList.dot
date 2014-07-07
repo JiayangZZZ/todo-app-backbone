@@ -1,0 +1,6 @@
+
+
+<script type="text/template" id="todo-list-tmpl">
+  <p>todoList.dot</p>
+  <li><%= title %></li>
+</script>

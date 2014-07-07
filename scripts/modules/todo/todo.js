@@ -18,19 +18,9 @@ define([
       description : 'DESCRIPTION'
     }
   });
-  var todo1 = new Todo({ title: 'TITLE1', description: 'DESCRIPTION1'});
-  var todo2 = new Todo({ title: 'TITLE2', description: 'DESCRIPTION2'});
-  var todo3 = new Todo({ title: 'TITLE3', description: 'DESCRIPTION3'});
 
+  return(Todo);
 })
-
-// define(function() {
-//   var Todo = function() {
-//     this.title = 'TITLE',
-//     this.description = 'DESCRIPTION'
-//   };
-//   return(new Todo());
-// });
 
 //Todo is a convention class
 //todo is an instance variable
