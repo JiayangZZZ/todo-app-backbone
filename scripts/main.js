@@ -5,7 +5,8 @@ requirejs.config({
   paths : {
     jquery : "vendor/jquery",
     backbone : "vendor/backbone",
-    underscore : "vendor/underscore"
+    underscore : "vendor/underscore",
+    dot : "vendor/doT"
   },
   shim: {
     'backbone': {
@@ -15,6 +16,11 @@ requirejs.config({
     'underscore': {
       exports: '_'
     }
+  },
+  map: {
+    '*': {
+      tmpl : '/public/templates/tmpl.js'
+    }
   }
 });
 
@@ -22,52 +28,40 @@ require([
 
   'jquery',
   'backbone',
-  'underscore',
+  'dot',
   'todo/todoView',
   'todo/todos',
-  'todo/test',
-  'todo/todo'
+  'todo/todo',
+  'todo/todosView',
+  'todo/router'
 
 ], function(
 
   jquery,
   Backbone,
-  _,
-  todoView,
+  TodoView,
   Todos,
-  test,
-  Todo
+  Todo,
+  TodosView,
+  Router
 
   ) {
 
-  var AppView = Backbone.View.extend({
-    el: '#container',
-    template: _.template( $("#todo-list-tmpl").html()),
-    initialize: function(){
-      this.render();
-    },
-    render: function(){
-      this.$el.html(this.template(this.model.toJSON()));
-      return(this);
-    }
-  });
-
-  var TEST = new Todo({
-    title: "titleadfadsfa",
-    description: "desdkjflskdjf"
-  });
-
-  var appView = new AppView({model: TEST});
-  var todoView = new todoView();
+  //fetching todo list from server
+  var todos = new Todos();
+  // var res = todos.fetch({
+  //   success: function() {
+  //     console.log(todos.toJSON());
+  //   }
+  // });
 
 
-  test.forEach(function(todo){ console.log(todo.title) });
-  // console.log(test.toJSON());
+  //intance of TodoView -- view for a single todo
+  // var todoView = new TodoView();
 
-  var todosFromServer = new Todos();
-  todosFromServer.fetch();
-  console.log(todosFromServer.fetch());
+  //intance of TodosView -- view for the whole todo list
 
+  // test.forEach(function(todo){ console.log(todo.title) });
 
 });
 

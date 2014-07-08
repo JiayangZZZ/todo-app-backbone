@@ -25,17 +25,17 @@
   padding: 30px 20px 10px 20px;
 }
 
-#new-todo {
-  height: 30px;
-  width: 100%;
-}
-
 .todo-list {
   padding: 10px 0;
 }
 
-#todo-list {
+.real-todo-list {
   padding: 10px 0;
+}
+
+.new-todo {
+  width: 90%;
+  height: 30px;
 }
 
 .todo-list-item {

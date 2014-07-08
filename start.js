@@ -26,7 +26,7 @@ app.get('/', function(req, res) {
       title: "three",
       description: "threethree"
     }]}),
-    template : tmpl.todoList()
+    template : tmpl.itemTemplate()
   }));
 })
 

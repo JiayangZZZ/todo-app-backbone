@@ -1,7 +1,15 @@
 
 // router
 
-define(function() {
+define([
+
+  'backbone'
+
+  ],function(
+
+    Backbone
+
+    ) {
   var Routers = Backbone.Router.extend({
     routers : {
       // '*filter' : 'setFilter'
@@ -9,7 +17,8 @@ define(function() {
       "/todo/:id" : "getTodo",
       "/create" : "createTodoOnEnter"
     },
-    'getTodos': function(){
+
+    getTodos: function(){
       console.log("ROUTE: homepage...");
     }
   })

@@ -2,14 +2,18 @@
 define([
 
   'backbone',
-  'underscore',
-  'todo/test'
+  'dot',
+  'todo/test',
+  'todo/todo',
+  'tmpl'
 
   ], function(
 
     Backbone,
-    _,
-    testTodos
+    doT,
+    testTodos,
+    Todo,
+    tmpl
 
     ){
 
@@ -18,23 +22,28 @@ define([
 
   console.log("this is the todo View");
   var TodoView = Backbone.View.extend({
-    el: '#todo-list',
-    tagNmae: 'li',
-    template: _.template( $("#todo-list-template").html()),
+    el: '.real-todo-list',
+    tagName: 'li',    //doesn't work!
+    // template: tmpl.itemTemplate(),
 
     initialize: function(){
       this.render();
       console.log("todoView initialized.");
     },
     render: function(){
-      console.log("rendering....");
-      console.log("todos.title: "+ todos.title);
-      this.$el.html(this.template(todos));
+      console.log(tmpl);
+      // console.log("rendering....");
+
+      // console.log("todos.title: "+ this.model.title);
+      // this.$el.html(this.template(this.model));
+      this.$el.html(tmpl.itemTemplate( { title:  'adsf' } ));
       return this;
     }
   });
+  var todoview = new TodoView({model: todos});
 
   return(TodoView);
+
 })
 
 

@@ -6,10 +6,10 @@ contaienr
 
 <div class="body-container">
   <div class="create">
-    <input id="new-todo" placeholder="What needs to be done?">
+    <input class="new-todo" placeholder="What needs to be done?">
   </div>
   <!-- testing view from main.js -->
-  <ul id="container">loading...</ul>
+  <ul class="real-todo-list">loading...</ul>
 
   <!-- hard coded todo list -->
   <ul class="todo-list">
@@ -17,16 +17,5 @@ contaienr
       <li class="todo-list-item">{{=todo.title}}</li>
     {{~}}
   </ul>
-
-  <!-- testing todo-list-template -->
-  <div id="container2">LOADING....</div>
-
-  <!-- todo list template renders down here -->
-  <ul id="todo-list"></ul>
-
-  <script type="text/template" id="todo-list-template">
-    <p> this is from template, pretending to bbbbbbbbe a todo list</p>
-    <li><%= title %></li>
-  </script>
 
 </div>
