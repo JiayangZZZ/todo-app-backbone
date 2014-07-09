@@ -47,6 +47,13 @@ require([
 
   ) {
 
+  /**
+   * Router Instantiation
+   */
+
+   var router = new Router;
+   Backbone.history.start({pushState: false, hashChange: false});
+
   //fetching todo list from server
 
   // var todo = new Todo();
@@ -59,7 +66,7 @@ require([
 
   //intance of TodosView -- view for the whole todo list
   // var todosView = new TodosView();
-  var todoView = new TodoView();
+  // var todoView = new TodoView();
 
   // test.forEach(function(todo){ console.log(todo.title) });
 
