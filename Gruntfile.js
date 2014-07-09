@@ -27,6 +27,14 @@ module.exports = function(grunt) {
         ],
 
         tasks : ['dot']
+      },
+
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['jshint'],
+        options: {
+          spawn: false
+        }
       }
     },
 
@@ -43,10 +51,23 @@ module.exports = function(grunt) {
         ],
         dest : './public/templates/tmpl.js'
       }
+    },
+
+    jshint: {
+      all: ['scripts/modules/documents/*.js'
+            , 'scripts/modules/todo/*.js' ],
+      options: {
+        globals: {
+          jQuery: true,
+          console: true,
+          module: true
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-dot-compiler');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 };
