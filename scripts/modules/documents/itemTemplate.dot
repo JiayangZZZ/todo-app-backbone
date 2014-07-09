@@ -1,6 +1,8 @@
 
 
-  <div class="todo-list-item">
-    <label>{{=it}}</label>
-  </div>
+<a href="http://zhangjiayang.dev.p1staff.com:3300/todos/{{=it.id}}">
+  <li class="todo-list-item">
+    <label>{{=it.title}}</label>
+  </li>
+</a>
 

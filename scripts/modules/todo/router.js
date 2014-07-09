@@ -5,11 +5,12 @@ define([
 
   'backbone'
 
-  ],function(
+],function(
 
-    Backbone
+  Backbone
 
-    ) {
+) {
+
   var Routers = Backbone.Router.extend({
     routers : {
       // '*filter' : 'setFilter'

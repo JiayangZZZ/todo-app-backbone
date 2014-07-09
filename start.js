@@ -16,17 +16,14 @@ app.configure(function() {
 app.get('/', function(req, res) {
   res.send(tmpl.html({
     header : tmpl.header({ title : "TODO"}),
-    body : tmpl.body({ todos: [{
-      title: "one",
-      description: "oneone"
-    },{
-      title: "two",
-      description: "twotwo"
-    },{
-      title: "three",
-      description: "threethree"
-    }]}),
-    template : tmpl.itemTemplate()
+    body : tmpl.body()
+  }));
+})
+
+app.get('/todos/:id', function(req, res) {
+  res.send(tmpl.html({
+    header : tmpl.header({ title : "TODO"}),
+    body : tmpl.todoBody({title: 'title', description: 'description'})
   }));
 })
 

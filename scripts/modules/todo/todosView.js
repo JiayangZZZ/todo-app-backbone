@@ -5,41 +5,44 @@ define([
   'todo/todos',
   'todo/todoView'
 
-  ],
-  function(
+],
+function(
 
-    Backbone,
-    Todos,
-    TodoView
+  Backbone,
+  Todos,
+  TodoView
 
-    ){
-    var todos = new Todos();
+){
+
     var TodosView = Backbone.View.extend({
+      initialize: function(collection) {
+        this.collection = collection;
+        this.render();
+        this.$todoList = $('.real-todo-list');
+      },
+      render: function() {
+        var _this = this;
+        console.log('todos view rendering...');
+        // todos.forEach(function(todo) {
+        //   var view = new TodoView({model: todo});
+        //   $('.real-todo-list').append(view.render().el);
+        // })
 
-      // // tagName: 'ul',
-      // el: '#container',
-      // initialize: function() {
-      //   this.input = this.$('#new-todo');
-      //   todos.on('add', this.addOne, this);
-      //   todos.fetch();
-      // },
-      // events: {
-      //   'keypress #new-todo': 'createTodoOnEnter'
-      // },
-      // createTodoOnEnter: function(e) {
-      //   if (e.which !== 13 || !this.input.val().trim()){
-      //     return;
-      //   }
-      //   todos.create(this.newAttributes());
-      //   this.input.val(''); //clear the input box
-      // }
-      // addOne: function(todo) {
-      //   var view = new TodoView({model: todo});
-      //   $('#todo-list').append(view.render().el);
-      // }
+        // console.log('adfadfadsf');
 
+        var todos = new Todos();
+        todos.fetch({
+          success: function() {
+            todos.forEach(function(todo) {
+              var view = new TodoView(todo);
+              _this.$todoList.append(view.toHTML());
+            });
+          }
+        });
+      }
     });
 
+    // var todoView = new TodoView();
     return(TodosView);
 
   })

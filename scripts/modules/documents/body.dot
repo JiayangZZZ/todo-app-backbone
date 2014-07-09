@@ -6,16 +6,11 @@ contaienr
 
 <div class="body-container">
   <div class="create">
-    <input class="new-todo" placeholder="What needs to be done?">
+    <a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="create-button">
+      <p class="create-button-text">CREATE</p>
+    </a>
   </div>
   <!-- testing view from main.js -->
-  <ul class="real-todo-list">loading...</ul>
-
-  <!-- hard coded todo list -->
-  <ul class="todo-list">
-    {{~it.todos : todo : index}}
-      <li class="todo-list-item">{{=todo.title}}</li>
-    {{~}}
-  </ul>
+  <ul class="real-todo-list"></ul>
 
 </div>

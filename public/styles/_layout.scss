@@ -1,6 +1,11 @@
 
 .header {
+  text-align: center;
+  font-weight: 200;
+}
 
+.body {
+  height: 100%;
 }
 
 .landing-header-container {
@@ -10,19 +15,16 @@
   padding: 20px 0;
 }
 
-.title {
-  text-align: center;
-  font-weight: 200;
-}
-
 .body-container {
   margin: 0 auto;
   width: 600px;
   background-color: white;
+  height: 100%;
 }
 
 .create {
   padding: 30px 20px 10px 20px;
+  text-align: center;
 }
 
 .todo-list {
@@ -30,7 +32,7 @@
 }
 
 .real-todo-list {
-  padding: 10px 0;
+  padding: 10px 50px;
 }
 
 .new-todo {
@@ -39,5 +41,27 @@
 }
 
 .todo-list-item {
-  margin: 10px 20px;
+  padding: 10px;
+}
+
+.create-button {
+  border: solid #27cd00 1px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.create-button-text {
+  color: #27cd00;
+  text-align: center;
+  padding: 20px 100px;
+}
+
+.title {
+  padding: 30px 50px 0 50px;
+  font-weight: 200;
+}
+
+.description {
+  padding: 20px 50px;
 }
