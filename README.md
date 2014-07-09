@@ -3,5 +3,5 @@ todo-app-backbone
 
 using backbone
 
-Poor Mikael has not curable illness today.
+Poor Mikael has non-curable illness today.
 Let's celebrate.
