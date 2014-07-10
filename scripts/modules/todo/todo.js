@@ -3,11 +3,13 @@
 
 define([
 
-  'backbone'
+  'backbone',
+  'superagent'
 
 ], function(
 
-  Backbone
+  Backbone,
+  request
 
 ) {
 
@@ -18,8 +20,25 @@ define([
     },
 
     url: function() {
-      return 'http://zhangjiayang.dev.p1staff.com:3000/todos' + this.id + '?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
-      // return 'http://zhangjiayang.dev.p1staff.com:3000/todos/23?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
+      return '/todos/' + this.id + '?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
+    },
+
+    sync: function(method, model) {
+      switch (method) {
+        case 'read':
+          request
+            .get(this.url)
+            .end(function(err, res) {
+              console.log('asdfsdfadf');
+            });
+        break;
+        case 'update':
+        break;
+        case 'creat':
+        break;
+        case 'delete':
+        break;
+      }
     }
   });
 });

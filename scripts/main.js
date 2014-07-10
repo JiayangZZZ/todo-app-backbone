@@ -1,12 +1,12 @@
 
 
 requirejs.config({
-  baseUrl : 'scripts/modules',
+  baseUrl : '/scripts/modules',
   paths : {
-    jquery : "vendor/jquery",
-    backbone : "vendor/backbone",
-    underscore : "vendor/underscore",
-    dot : "vendor/doT"
+    jquery : "vendor/jquery/dist/jquery",
+    backbone : "vendor/backbone/backbone",
+    underscore : "vendor/underscore/underscore",
+    superagent : 'vendor/superagent'
   },
   shim: {
     'backbone': {
@@ -26,23 +26,12 @@ requirejs.config({
 
 require([
 
-  'jquery',
   'backbone',
-  'dot',
-  'todo/todos',
-  'todo/todo',
-  'todo/todosView',
-  'todo/todoView',
   'todo/router'
 
 ], function(
 
-  jquery,
   Backbone,
-  Todos,
-  Todo,
-  TodosView,
-  TodoView,
   Router
 
   ) {
@@ -51,10 +40,15 @@ require([
    * Router Instantiation
    */
 
-   var router = new Router;
-   Backbone.history.start({pushState: false, hashChange: false});
+  var router = new Router();
 
-  //fetching todo list from server
+  Backbone.history.start({pushState: true, hashChange: false});
+
+  window.cf = {
+    origin : 'http://zhangjiayang.dev.p1staff.com:3000'
+  };
+
+  //fetching todo list fsrom server
 
   // var todo = new Todo();
   // var res = todo.fetch({
@@ -63,10 +57,6 @@ require([
   //     console.log(JSON.stringify(todo));
   //   }
   // });
-
-  //intance of TodosView -- view for the whole todo list
-  // var todosView = new TodosView();
-  // var todoView = new TodoView();
 
   // test.forEach(function(todo){ console.log(todo.title) });
 

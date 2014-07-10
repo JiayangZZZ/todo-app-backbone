@@ -17,7 +17,7 @@ define([
     });
 
     return(Todos);
-   })
+   });
 
 
 //collections are ordered sets of models

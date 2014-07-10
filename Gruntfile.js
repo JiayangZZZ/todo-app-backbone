@@ -55,7 +55,8 @@ module.exports = function(grunt) {
 
     jshint: {
       all: ['scripts/modules/documents/*.js'
-            , 'scripts/modules/todo/*.js' ],
+            , 'scripts/modules/todo/*.js'
+            , 'scripts/main.js'],
       options: {
         globals: {
           jQuery: true,

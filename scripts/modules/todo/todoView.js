@@ -2,16 +2,12 @@
 define([
 
   'backbone',
-  'dot',
-  'todo/test',
   'todo/todo',
   'tmpl'
 
 ], function(
 
   Backbone,
-  doT,
-  testTodos,
   Todo,
   tmpl
 
@@ -34,10 +30,14 @@ define([
     toHTML: function() {
       console.log(this.model.toJSON());
       return tmpl.itemTemplate(this.model.toJSON());
+    },
+
+    ttoHTML: function() {
+      return tmpl.todoBody(this.model.toJSON());
     }
   });
 
   return TodoView;
-})
+});
 
 
