@@ -20,7 +20,7 @@ define([
     },
 
     url: function() {
-      return cf.origin + '/todos/' + this.id + '?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
+      return cf.origin + '/todos/' + this.id + '?userId=' + cf.userId + '&accessToken=' + cf.accessToken;
     },
 
     sync: function(method, model, options) {

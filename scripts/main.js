@@ -41,7 +41,9 @@ require([
    */
 
   window.cf = {
-    origin : 'http://zhangjiayang.dev.p1staff.com:3000'
+    origin : 'http://zhangjiayang.dev.p1staff.com:3000',
+    userId : '1',
+    accessToken : 'd331dac991d3c59d17b8794040b910b80e3baaa4'
   };
 
   /**
