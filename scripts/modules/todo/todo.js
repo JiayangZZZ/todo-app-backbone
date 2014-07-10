@@ -20,16 +20,22 @@ define([
     },
 
     url: function() {
-      return '/todos/' + this.id + '?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
+      return cf.origin + '/todos/' + this.id + '?userId=1&accessToken=d331dac991d3c59d17b8794040b910b80e3baaa4';
     },
 
-    sync: function(method, model) {
+    sync: function(method, model, options) {
       switch (method) {
         case 'read':
           request
-            .get(this.url)
+            .get(this.url())
             .end(function(err, res) {
-              console.log('asdfsdfadf');
+              if (err) {
+                console.log('GET error!');
+                return;
+              }
+              var todo = res.body[0];
+              model.set({ title: todo.title, description: todo.description});
+              options.success();
             });
         break;
         case 'update':
@@ -37,6 +43,8 @@ define([
         case 'creat':
         break;
         case 'delete':
+          request
+            .del(this.url());
         break;
       }
     }

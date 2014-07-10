@@ -5,15 +5,19 @@ define([
 
   'backbone',
   'todo/todo',
+  'todo/todos',
   'todo/todosView',
-  'todo/todoView'
+  'todo/todoView',
+  'tmpl'
 
 ],function(
 
   Backbone,
   Todo,
+  Todos,
   TodosView,
-  TodoView
+  TodoView,
+  tmpl
 
 ) {
 
@@ -25,23 +29,33 @@ define([
     },
 
     getTodos: function() {
-      var todosView = new TodosView();
+      var todos = new Todos();
+      todos.fetch({
+        success: function() {
+          this.$todoList = $('.real-todo-list');
+          var _this = this;
+          todos.forEach(function(todo) {
+            var view = new TodoView(todo);
+            _this.$todoList.append(view.toHTML());
+          });
+        }
+      });
     },
 
     getOneTodo:  function(id) {
       var todo = new Todo();
       todo.id = id;
-      console.log(todo.fetch());
       todo.fetch({
         success: function() {
           console.log(todo);
-          var view = new TodoView(); //error
+          var view = new TodoView(todo);
+          $('.body-container').html(view.todoToHTML());
         }
       });
     },
 
     create: function() {
-
+      $('.body-container').html(tmpl.createTemplate());
     }
   });
 

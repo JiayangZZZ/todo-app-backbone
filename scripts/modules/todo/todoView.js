@@ -14,10 +14,14 @@ define([
 ) {
 
 
-  var TodoView = Backbone.View.extend({
+  return Backbone.View.extend({
 
     initialize: function(model) {
       this.model = model;
+    },
+
+    events: {
+      'dblclick .body-container' : 'edit'
     },
 
     /**
@@ -32,12 +36,22 @@ define([
       return tmpl.itemTemplate(this.model.toJSON());
     },
 
-    ttoHTML: function() {
-      return tmpl.todoBody(this.model.toJSON());
+    /**
+     * Todo To HTML
+     *
+     * @return {String}
+     * @api public
+     */
+    todoToHTML: function() {
+      return tmpl.todoTemplate(this.model.toJSON());
+    },
+
+    edit: function() {
+      $('.title').html('asdfsdf');
+      console.log('clicked');
     }
   });
 
-  return TodoView;
 });
 
 

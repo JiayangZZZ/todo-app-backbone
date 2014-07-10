@@ -23,8 +23,15 @@ app.get('/', function(req, res) {
 app.get('/todos/:id', function(req, res) {
   res.send(tmpl.html({
     header : tmpl.header({ title : "TODO"}),
-    body : tmpl.todoBody({title: 'title', description: 'description'})
+    body : tmpl.body()
   }));
+})
+
+app.get('/create', function(req, res) {
+  res.send(tmpl.html({
+    header : tmpl.header({ title : "TODO"}),
+    body : tmpl.body()
+  }))
 })
 
 http.createServer(app).listen(app.get('port'), function() {

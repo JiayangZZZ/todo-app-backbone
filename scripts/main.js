@@ -37,6 +37,14 @@ require([
   ) {
 
   /**
+   * Global Config
+   */
+
+  window.cf = {
+    origin : 'http://zhangjiayang.dev.p1staff.com:3000'
+  };
+
+  /**
    * Router Instantiation
    */
 
@@ -44,9 +52,6 @@ require([
 
   Backbone.history.start({pushState: true, hashChange: false});
 
-  window.cf = {
-    origin : 'http://zhangjiayang.dev.p1staff.com:3000'
-  };
 
   //fetching todo list fsrom server
 
