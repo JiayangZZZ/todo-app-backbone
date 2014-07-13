@@ -5,12 +5,11 @@ contaienr
 -->
 
 <div class="body-container">
-  <div class="create">
-    <a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="create-button">
-      <p class="create-button-text">CREATE</p>
+  <div class="one-button">
+    <a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="green-button">
+      <p class="green-button-text">CREATE</p>
     </a>
   </div>
   <!-- testing view from main.js -->
   <ul class="real-todo-list"></ul>
-
 </div>

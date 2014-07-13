@@ -13,6 +13,9 @@
   width: 600px;
   background-color: #dedede;
   padding: 20px 0;
+  @media(max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .body-container {
@@ -20,11 +23,9 @@
   width: 600px;
   background-color: white;
   height: 100%;
-}
-
-.create {
-  padding: 30px 20px 10px 20px;
-  text-align: center;
+  @media(max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .todo-list {
@@ -42,19 +43,6 @@
 
 .todo-list-item {
   padding: 10px;
-}
-
-.create-button {
-  border: solid #27cd00 1px;
-  border-radius: 5px;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.create-button-text {
-  color: #27cd00;
-  text-align: center;
-  padding: 20px 100px;
 }
 
 .title {
@@ -94,38 +82,45 @@
   line-height: 20px;
 }
 
-.delete {
+
+// buttons
+.one-button {
+  margin: 0 auto;
   padding: 30px 20px 10px 20px;
   text-align: center;
 }
 
-.delete-button {
-  border: solid #d44831 1px;
-  border-radius: 5px;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.delete-button-text {
-  color: #d44831;
-  text-align: center;
-  padding: 20px 100px;
-}
-
-.back {
+.two-buttons {
+  margin: 0 auto;
   padding: 30px 20px 10px 20px;
   text-align: center;
 }
 
-.back-button {
+.green-button {
   border: solid #27cd00 1px;
   border-radius: 5px;
   overflow: hidden;
   display: inline-block;
+  margin: 10px;
 }
 
-.back-button-text {
+.green-button-text {
   color: #27cd00;
   text-align: center;
-  padding: 20px 100px;
+  padding: 20px 70px;
 }
+
+.red-button {
+  border: solid #d44831 1px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px;
+}
+
+.red-button-text {
+  color: #d44831;
+  text-align: center;
+  padding: 20px 70px;
+}
+

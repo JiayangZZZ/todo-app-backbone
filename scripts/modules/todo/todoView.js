@@ -16,12 +16,41 @@ define([
 
   return Backbone.View.extend({
 
+    el: '.body-container',
+
     initialize: function(model) {
       this.model = model;
+      model.on({
+        'change:title' : this.titleUpdate,
+        'change:description' : this.descriptionUpdate
+      });
     },
 
     events: {
-      'dblclick .body-container' : 'edit'
+      'click .red-button' : 'delete',
+      'dblclick .title' : 'edit',
+      'dblclick .description' : 'edit',
+      'keypress .input-todo-title' : 'moveToDes'
+    },
+
+    // delete: function() {
+    //   this.model.destroy({
+    //     success: function(model, res) {
+    //       var router = new Backbone.Router();
+    //       router.navigate('/', {trigger: true, replace: true});
+    //       console.log('todo deleted.');
+    //     }
+    //   })
+    // },
+
+    delete: function() {
+      this.remove();
+      var router = new Backbone.Router();
+      router.navigate('/', {trigger: true, replace: true});
+    },
+
+    edit: function() {
+      alert('edit');
     },
 
     /**
@@ -46,9 +75,13 @@ define([
       return tmpl.todoTemplate(this.model.toJSON());
     },
 
-    edit: function() {
-      $('.title').html('asdfsdf');
-      console.log('clicked');
+    moveToDes: function(e) {
+      console.log('entering..');
+      if( e.which !== 13 || !this.$('.input-todo-title').val().trim() ) {
+        return;
+      }
+      console.log('asdfadf');
+      $('.input-todo-description').focus();
     }
   });
 

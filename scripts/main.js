@@ -54,19 +54,6 @@ require([
 
   Backbone.history.start({pushState: true, hashChange: false});
 
-
-  //fetching todo list fsrom server
-
-  // var todo = new Todo();
-  // var res = todo.fetch({
-  //   success: function() {
-  //     console.log(todo.toJSON());
-  //     console.log(JSON.stringify(todo));
-  //   }
-  // });
-
-  // test.forEach(function(todo){ console.log(todo.title) });
-
 });
 
 
