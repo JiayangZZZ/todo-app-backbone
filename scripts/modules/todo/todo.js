@@ -24,6 +24,8 @@ define([
     },
 
     sync: function(method, model, options) {
+      console.log(model.get('title'));
+      console.log(method);
       switch (method) {
         case 'read':
           request
@@ -42,8 +44,8 @@ define([
           request
             .put(this.url())
             .send({
-              title : req.body.title,
-              description : req.body.description
+              title : model.get('title'),
+              description : model.get('description')
             })
             .end(function(err, res) {
               if(err) {
@@ -67,6 +69,9 @@ define([
             .del(this.url());
         break;
       }
+
+      // Backbone.Model.prototype.sync.apply(this, arguments);
+      // Backbone.sync.apply(this, arguments);
     }
   });
 });

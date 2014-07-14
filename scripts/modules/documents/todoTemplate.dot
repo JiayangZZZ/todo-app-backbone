@@ -3,10 +3,12 @@
 
 
 <div class="title">
-  {{=it.title}}
+  <p>{{=it.title}}</p>
+  <input class="edit-title" value="{{=it.title}}">
 </div>
 <div class="description">
-  {{=it.description}}
+  <p>{{=it.description}}</p>
+  <textarea class="edit-description">{{=it.description}}</textarea>
 </div>
 <div class="two-buttons">
   <a class="red-button">
@@ -15,4 +17,11 @@
   <a href="http://zhangjiayang.dev.p1staff.com:3300" class="green-button">
     <p class="green-button-text">BACK</p>
   </a>
+</div>
+<div class="hidden-button">
+<div class="one-button">
+  <a class="green-button">
+    <p class="green-button-text">SAVE</p>
+  </a>
+</div>
 </div>

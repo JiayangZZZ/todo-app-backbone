@@ -48,10 +48,41 @@
 .title {
   padding: 30px 50px 0 50px;
   font-weight: 200;
+  .edit-title {
+    display: none;
+  }
 }
 
 .description {
   padding: 20px 50px;
+  .edit-description {
+    display: none;
+  }
+}
+
+.title-editing, .description-editing {
+  p {
+    display: none;
+  }
+}
+
+.edit-title {
+  padding: 5px 20px;
+  margin: 10px;
+  width: 90%;
+  border: none;
+  line-height: 20px;
+  background-color: #efefef;
+}
+
+.edit-description {
+  padding: 5px 20px;
+  margin: 10px;
+  width: 90%;
+  height: 300px;
+  border: none;
+  line-height: 20px;
+  background-color: #efefef;
 }
 
 .create-title {
@@ -124,3 +155,6 @@
   padding: 20px 70px;
 }
 
+.hidden-button {
+  display: none;
+}

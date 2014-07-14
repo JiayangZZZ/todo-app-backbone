@@ -18,6 +18,6 @@ var out='<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA
 var out='<a href="http://zhangjiayang.dev.p1staff.com:3300/todos/'+(it.id)+'"><li class="todo-list-item"><label>'+(it.title)+'</label></li></a>';return out;
 };
   tmpl['todoTemplate']=function anonymous(it) {
-var out='<!-- template for single todo --><div class="title">'+(it.title)+'</div><div class="description">'+(it.description)+'</div><div class="two-buttons"><a class="red-button"><p class="red-button-text">DELETE</p></a><a href="http://zhangjiayang.dev.p1staff.com:3300" class="green-button"><p class="green-button-text">BACK</p></a></div>';return out;
+var out='<!-- template for single todo --><div class="title"><p>'+(it.title)+'</p><input class="edit-title" value="'+(it.title)+'"></div><div class="description"><p>'+(it.description)+'</p><textarea class="edit-description">'+(it.description)+'</textarea></div><div class="two-buttons"><a class="red-button"><p class="red-button-text">DELETE</p></a><a href="http://zhangjiayang.dev.p1staff.com:3300" class="green-button"><p class="green-button-text">BACK</p></a></div><div class="hidden-button"><div class="one-button"><a class="green-button"><p class="green-button-text">SAVE</p></a></div></div>';return out;
 };
 return tmpl;});
