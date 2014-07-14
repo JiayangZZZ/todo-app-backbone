@@ -24,7 +24,6 @@ define([
     },
 
     sync: function(method, model, options) {
-      console.log(model.get('title'));
       console.log(method);
       switch (method) {
         case 'read':
@@ -36,32 +35,36 @@ define([
                 return;
               }
               var todo = res.body[0];
+              console.log(res.body[0]);
               model.set({ title: todo.title, description: todo.description});
               options.success();
             });
         break;
         case 'update':
           request
-            .put(this.url())
+            .put(this.url()+'&title='+model.get('title')+'&description='+model.get('description'))
             .send({
               title : model.get('title'),
               description : model.get('description')
             })
             .end(function(err, res) {
-              if(err) {
+              if(err)
                 console.log('PUT error!');
-              }
-              var todo = res.body[0];
-              model.set({ title: todo.title, description: todo.description});
               options.success();
             });
         break;
-        case 'creat':
+        case 'create':
           request
-            .post(this.url())
-            .form({
-              title : req.body.title,
-              description : req.body.description
+            .post(cf.origin + '/create' + '?userId=' + cf.userId + '&accessToken=' + cf.accessToken+'&title='+model.get('title')+'&description='+model.get('description'))
+            .end(function(err, res) {
+              if(err)
+                console.log('POST error!');
+              model.set({
+                id: res.body.id,
+                title: res.body.title,
+                description: res.body.description
+              });
+              options.success();
             });
         break;
         case 'delete':

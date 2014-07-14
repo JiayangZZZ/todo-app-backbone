@@ -8,6 +8,7 @@ define([
   'todo/todos',
   'todo/todosView',
   'todo/todoView',
+  'todo/formView',
   'tmpl'
 
 ],function(
@@ -17,6 +18,7 @@ define([
   Todos,
   TodosView,
   TodoView,
+  FormView,
   tmpl
 
 ) {
@@ -55,7 +57,9 @@ define([
     },
 
     create: function() {
-      $('.body-container').html(tmpl.createTemplate());
+      var todo = new Todo();
+      var form = new FormView(todo);
+      form.toHTML();
     }
   });
 

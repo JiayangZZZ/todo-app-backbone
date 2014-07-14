@@ -3,13 +3,15 @@ define([
 
   'backbone',
   'todo/todo',
-  'tmpl'
+  'tmpl',
+  'todo/router'
 
 ], function(
 
   Backbone,
   Todo,
-  tmpl
+  tmpl,
+  Router
 
 ) {
 
@@ -81,6 +83,8 @@ define([
         this.$('.description').removeClass('description-editing');
         this.$('.one-button').addClass('hidden-button');
         this.$('.two-buttons').removeClass('hidden-button');
+        this.$('.title>p').html(title);
+        this.$('.description>p').html(description);
       }
       else {
         alert('Title must not be empty.');

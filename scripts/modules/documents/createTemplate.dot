@@ -11,7 +11,7 @@
   </textarea>
 </div>
 <div class="one-button">
-  <a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="green-button">
+  <a class="green-button">
     <p class="green-button-text">SAVE</p>
   </a>
 </div>

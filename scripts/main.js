@@ -51,6 +51,9 @@ require([
    */
 
   var router = new Router();
+  window.navigate = function(url) {
+    return Backbone.Router.prototype.navigate(url, {trigger: true});
+  };
 
   Backbone.history.start({pushState: true, hashChange: false});
 
