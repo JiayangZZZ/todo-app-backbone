@@ -3,7 +3,10 @@ function encodeHTMLSource() {  var encodeHTMLRules = { "&": "&#38;", "<": "&#60;
 String.prototype.encodeHTML=encodeHTMLSource();
 var tmpl = {};
   tmpl['body']=function anonymous(it) {
-var out='<!--contaienr--><div class="body-container"><div class="one-button"><a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="green-button"><p class="green-button-text">CREATE</p></a></div><!-- testing view from main.js --><ul class="real-todo-list"></ul></div>';return out;
+var out='<!--contaienr--><div class="body-container"><!-- create button --><div class="button"></div><!-- testing view from main.js --><ul class="real-todo-list"></ul></div>';return out;
+};
+  tmpl['createButton']=function anonymous(it) {
+var out='<!--create-button--><div class="one-button"><a href="http://zhangjiayang.dev.p1staff.com:3300/create" class="green-button"><p class="green-button-text">CREATE</p></a></div>';return out;
 };
   tmpl['createTemplate']=function anonymous(it) {
 var out='<!-- template for creating todo --><div class="create-title"><input name="title" class="input-todo-title" type="text" placeholder="Title here"></input></div><div class="create-description"><textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!"></textarea></div><div class="one-button"><a class="green-button"><p class="green-button-text">SAVE</p></a></div>';return out;

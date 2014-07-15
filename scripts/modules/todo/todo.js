@@ -73,7 +73,7 @@ define([
         break;
       }
 
-      // Backbone.Model.prototype.sync.apply(this, arguments);
+      Backbone.Model.prototype.sync.apply(this, arguments);
       // Backbone.sync.apply(this, arguments);
     }
   });

@@ -38,6 +38,7 @@ define([
           var _this = this;
           todos.forEach(function(todo) {
             var view = new TodoView(todo);
+            $('.button').html(tmpl.createButton());
             _this.$todoList.append(view.toHTML());
           });
         }

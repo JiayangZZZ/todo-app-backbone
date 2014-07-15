@@ -23,7 +23,7 @@ define([
 
     events: {
       'keypress .input-todo-title' : 'moveToDes',
-      'click .green-button' : 'save'
+      'click .one-button>.green-button' : 'save'
     },
 
     moveToDes: function(e) {

@@ -22,7 +22,6 @@ define([
 
     initialize: function(model) {
       this.model = model;
-      console.log(this.model.id);
       model.on({
         'change:title' : this.titleUpdate,
         'change:description' : this.descriptionUpdate
@@ -48,9 +47,7 @@ define([
     // },
 
     delete: function() {
-      this.remove();
-      var router = new Backbone.Router();
-      router.navigate('/', {trigger: true, replace: true});
+      // navigate('');
     },
 
     edit: function() {
