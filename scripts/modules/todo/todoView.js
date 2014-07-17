@@ -32,26 +32,26 @@ define([
       'click .red-button' : 'delete',
       'dblclick .title' : 'edit',
       'dblclick .description' : 'edit',
-      'click .save>.one-button>.green-button' : 'save',
+      'click .save>.one-button>.green-button' : 'saveEdit',
       'keypress .title-editing' : 'moveToDes'
     },
 
-    // delete: function() {
-    //   this.model.destroy({
-    //     success: function(model, res) {
-    //       var router = new Backbone.Router();
-    //       router.navigate('/', {trigger: true, replace: true});
-    //       console.log('todo deleted.');
-    //     }
-    //   })
-    // },
-
     delete: function() {
-      // navigate('');
+      console.log('app.models.todos: '+app.models.todos);
+      this.model.destroy();
+      console.log('This.model.destroy().. app.models.todos: '+app.models.todos);
+      console.log('this.model.id: '+this.model.id);
+      app.models.todos.remove(this.model.id);
+      console.log('removed i hope.');
+      console.log(app.models.todos.toJSON());
+        console.log('asdfasdf');
+        $('.body-container').empty();
+        $('.body-container').append('<div class="button">');
+        $('.body-container').append('<ul class="todo-list">');
+        navigate('');
     },
 
     edit: function() {
-      console.log('edit');
       this.$('.title').addClass('title-editing');
       this.$('.title').removeClass('title');
       this.$('.description').addClass('description-editing');
@@ -62,26 +62,31 @@ define([
       this.$('.edit-title').focus();
     },
 
-    save: function() {
+    saveEdit: function() {
       var title = this.$('.edit-title').val(),
           description = this.$('.edit-description').val();
-      console.log(this.$('.edit-title').val());
+      console.log(this.model.toJSON());
+      console.log(title);
       if(title) {
         this.model.set({
           id: this.model.id,
           title: title,
           description: description
         });
-        this.model.save();
+        this.model.save(null, {
+          success: function() {
+            this.$('.title-editing').addClass('title');
+            this.$('.title').removeClass('title-editing');
+            this.$('.description-editing').addClass('description');
+            this.$('.description').removeClass('description-editing');
+            this.$('.one-button').addClass('hidden-button');
+            this.$('.two-buttons').removeClass('hidden-button');
+            this.$('.title>p').html(title);
+            this.$('.description>p').html(description);
+          }
+        });
 
-        this.$('.title-editing').addClass('title');
-        this.$('.title').removeClass('title-editing');
-        this.$('.description-editing').addClass('description');
-        this.$('.description').removeClass('description-editing');
-        this.$('.one-button').addClass('hidden-button');
-        this.$('.two-buttons').removeClass('hidden-button');
-        this.$('.title>p').html(title);
-        this.$('.description>p').html(description);
+
       }
       else {
         alert('Title must not be empty.');
@@ -98,7 +103,6 @@ define([
      */
 
     toHTML: function() {
-      console.log(this.model.toJSON());
       return tmpl.itemTemplate(this.model.toJSON());
     },
 

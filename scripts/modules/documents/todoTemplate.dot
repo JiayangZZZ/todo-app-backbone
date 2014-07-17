@@ -19,9 +19,9 @@
   </a>
 </div>
 <div class="hidden-button">
-<div class="one-button">
-  <a class="green-button">
-    <p class="green-button-text">SAVE</p>
-  </a>
-</div>
+  <div class="one-button">
+    <a class="green-button">
+      <p class="green-button-text">SAVE</p>
+    </a>
+  </div>
 </div>

@@ -18,12 +18,13 @@ define([
     el: '.body-container',
 
     initialize: function(model) {
+      $('.input-todo-title').focus();
       this.model = model;
     },
 
     events: {
       'keypress .input-todo-title' : 'moveToDes',
-      'click .one-button>.green-button' : 'save'
+      'click .one-button>.green-button' : 'saveNew'
     },
 
     moveToDes: function(e) {
@@ -33,7 +34,7 @@ define([
       }
     },
 
-    save: function() {
+    saveNew: function() {
       var _this = this;
 
       console.log('saving new todo..');
@@ -48,8 +49,7 @@ define([
         });
         this.model.save(null, {
           success: function() {
-            console.log('nonono');
-            console.log(_this.model.get('id'));
+            console.log('New todo id: '+ _this.model.get('id'));
             navigate('todos/'+_this.model.get('id'));
           }
         });

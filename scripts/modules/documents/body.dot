@@ -10,5 +10,6 @@ contaienr
   <div class="button"></div>
 
   <!-- testing view from main.js -->
-  <ul class="real-todo-list"></ul>
+  <ul class="todo-list"></ul>
+
 </div>

@@ -15,7 +15,7 @@ define([
 
   return Backbone.Model.extend({
     defaults: {
-      title : 'TITLE!!!',
+      title : 'TITLE',
       description : 'DESCRIPTION'
     },
 
@@ -24,7 +24,6 @@ define([
     },
 
     sync: function(method, model, options) {
-      console.log(method);
       switch (method) {
         case 'read':
           request
@@ -35,8 +34,11 @@ define([
                 return;
               }
               var todo = res.body[0];
-              console.log(res.body[0]);
-              model.set({ title: todo.title, description: todo.description});
+              model.set({
+                id: todo.id,
+                title: todo.title,
+                description: todo.description
+              });
               options.success();
             });
         break;
@@ -70,11 +72,12 @@ define([
         case 'delete':
           request
             .del(this.url());
+            console.log('hej');
+            options.success();
         break;
       }
 
       Backbone.Model.prototype.sync.apply(this, arguments);
-      // Backbone.sync.apply(this, arguments);
     }
   });
 });

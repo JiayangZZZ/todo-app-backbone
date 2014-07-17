@@ -4,11 +4,11 @@
 define([
 
   'backbone',
-  'todo/todo',
-  'todo/todos',
-  'todo/todosView',
-  'todo/todoView',
-  'todo/formView',
+  './todo',
+  './todos',
+  './todosView',
+  './todoView',
+  './formView',
   'tmpl'
 
 ],function(
@@ -31,26 +31,27 @@ define([
     },
 
     getTodos: function() {
-      var todos = new Todos();
-      todos.fetch({
+      $('.body-container').empty();
+      $('.body-container').append('<div class="button">');
+      $('.body-container').append('<ul class="todo-list">');
+
+      app.models.todos = new Todos();
+      app.models.todos.fetch({
         success: function() {
-          this.$todoList = $('.real-todo-list');
-          var _this = this;
-          todos.forEach(function(todo) {
-            var view = new TodoView(todo);
-            $('.button').html(tmpl.createButton());
-            _this.$todoList.append(view.toHTML());
-          });
+          $('.button').html(tmpl.createButton());
+          var todosView = new TodosView(app.models.todos);
+          todosView.render();
         }
       });
     },
 
     getOneTodo:  function(id) {
+      $('.body-container').empty();
       var todo = new Todo();
       todo.id = id;
       todo.fetch({
         success: function() {
-          console.log(todo);
+          // console.log(todo);
           var view = new TodoView(todo);
           $('.body-container').html(view.todoToHTML());
         }
