@@ -15,22 +15,19 @@ app.configure(function() {
 
 app.get('/', function(req, res) {
   res.send(tmpl.html({
-    header : tmpl.header({ title : "TODO"}),
-    body : tmpl.body()
+    header : tmpl.header({ title : "TODO"})
   }));
 })
 
 app.get('/todos/:id', function(req, res) {
   res.send(tmpl.html({
-    header : tmpl.header({ title : "TODO"}),
-    body : tmpl.body()
+    header : tmpl.header({ title : "TODO"})
   }));
 })
 
 app.get('/create', function(req, res) {
   res.send(tmpl.html({
-    header : tmpl.header({ title : "TODO"}),
-    body : tmpl.body()
+    header : tmpl.header({ title : "TODO"})
   }))
 })
 

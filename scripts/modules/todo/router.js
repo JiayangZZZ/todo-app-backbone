@@ -31,37 +31,40 @@ define([
     },
 
     getTodos: function() {
-      $('.body-container').empty();
-      $('.body-container').append('<div class="button">');
-      $('.body-container').append('<ul class="todo-list">');
+      // $('.body-container').empty();
+      // $('.body-container').append('<div class="button">');
+      // $('.body-container').append('<ul class="todo-list">');
 
       app.models.todos = new Todos();
       app.models.todos.fetch({
         success: function() {
-          $('.button').html(tmpl.createButton());
+          console.log(app.models.todos.toJSON());
           var todosView = new TodosView(app.models.todos);
-          todosView.render();
+          $('.body-container').append('<p>what the f**k</p>');
+          // $('.body-container').append(todosView.toHTML());
+          // todosView.bindDOM();
         }
       });
     },
 
     getOneTodo:  function(id) {
-      $('.body-container').empty();
+      // $('.body-container').empty();
       var todo = new Todo();
       todo.id = id;
       todo.fetch({
         success: function() {
           // console.log(todo);
-          var view = new TodoView(todo);
-          $('.body-container').html(view.todoToHTML());
+          var todoView = new TodoView(todo);
+          // todoView.el = '.body-container';
+          $('.body').html(todoView.todoToHTML());
         }
       });
     },
 
     create: function() {
       var todo = new Todo();
-      var form = new FormView(todo);
-      form.toHTML();
+      var formView = new FormView(todo);
+      formView.toHTML();
     }
   });
 

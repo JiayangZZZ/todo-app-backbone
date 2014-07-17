@@ -43,7 +43,7 @@ define([
       console.log('this.model.id: '+this.model.id);
       app.models.todos.remove(this.model.id);
       console.log('removed i hope.');
-      console.log(app.models.todos.toJSON());
+      console.log(app.models.todos);
         console.log('asdfasdf');
         $('.body-container').empty();
         $('.body-container').append('<div class="button">');

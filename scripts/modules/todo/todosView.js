@@ -3,14 +3,16 @@ define([
 
   'backbone',
   'todo/todos',
-  'todo/todoView'
+  'todo/todoView',
+  'tmpl'
 
 ],
 function(
 
   Backbone,
   Todos,
-  TodoView
+  TodoView,
+  tmpl
 
 ){
   /**
@@ -22,26 +24,43 @@ function(
 
   return Backbone.View.extend({
 
-    el: '.body-container',
+    el: '.body-container', //should be '.todos'
 
     initialize: function(collection) {
-      this.$todoList = $('.todo-list');
+      // this.$todoList = $('.todo-list');
       this.collection = collection;
-      this.listenTo(collection, 'add', this.addOne);
+      // this.listenTo(collection, 'add', this.addOne);
       // collection.on('remove', this.removeOne);
-      this.listenTo(this.collection, 'remove', this.removeOne);
+      // this.listenTo(this.collection, 'remove', this.removeOne);
     },
 
     events: {
       'click .todo-list-item' : 'todoNavigate'
     },
 
-    render: function() {
+    // render: function() {
+    //   $('.body').html(tmpl.body());
+    //   $('.button').html(tmpl.createButton());
+    //   this.collection.forEach(function(todo) {
+    //     var todoView = new TodoView(todo);
+    //     $('.todo-list').append(todoView.toHTML());
+    //   });
+    // },
 
-      this.collection.forEach(function(todo) {
-        var todoView = new TodoView(todo);
-        $('.todo-list').append(todoView.toHTML());
-      });
+    toHTML: function() {
+      // return tmpl.todosTemplate({
+      //   button : tmpl.createButton(),
+      //   todoList : 'ss'
+      // })
+      return 'yes';
+    },
+
+    binDOM: function() {
+
+    },
+
+    setElement: function(el) {
+      this.el = el;
     },
 
     addOne: function(todo) {

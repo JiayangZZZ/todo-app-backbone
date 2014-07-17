@@ -1,0 +1,15 @@
+<!--
+
+contaienr
+
+-->
+
+<div class="todos">
+
+  <!-- create button -->
+  <div class="button">{{=it.button}}</div>
+
+  <!-- testing view from main.js -->
+  <ul class="todo-list">{{=it.todoList}}</ul>
+
+</div>

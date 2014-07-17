@@ -15,8 +15,6 @@ define([
 
   return Backbone.View.extend({
 
-    el: '.body-container',
-
     initialize: function(model) {
       $('.input-todo-title').focus();
       this.model = model;
@@ -67,7 +65,7 @@ define([
      * @api public
      */
     toHTML: function() {
-      return $('.body-container').html(tmpl.createTemplate());
+      return $('.body').html(tmpl.createTemplate());
     }
   });
 

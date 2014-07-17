@@ -1,18 +1,18 @@
 
 <!-- template for creating todo -->
 
-
-<div class="create-title">
-  <input name="title" class="input-todo-title" type="text" placeholder="Title here">
-  </input>
+<div class="body-container">
+  <div class="create-title">
+    <input name="title" class="input-todo-title" type="text" placeholder="Title here">
+    </input>
+  </div>
+  <div class="create-description">
+    <textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!">
+    </textarea>
+  </div>
+  <div class="one-button">
+    <a class="green-button">
+      <p class="green-button-text">SAVE</p>
+    </a>
+  </div>
 </div>
-<div class="create-description">
-  <textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!">
-  </textarea>
-</div>
-<div class="one-button">
-  <a class="green-button">
-    <p class="green-button-text">SAVE</p>
-  </a>
-</div>
-
