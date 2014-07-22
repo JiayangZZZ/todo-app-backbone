@@ -1,0 +1,23 @@
+<!--
+
+contaienr
+
+-->
+
+<div class="todos">
+
+  <!-- create button -->
+  <div class="button">
+    <div class="one-button">
+      <div class="green-button">
+        <a href="http://zhangjiayang.dev.p1staff.com:3300/create">
+          <p class="green-button-text">CREATE</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- testing view from main.js -->
+  <ul class="todo-list"></ul>
+
+</div>

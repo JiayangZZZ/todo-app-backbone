@@ -11,7 +11,8 @@
       {{=it.header}}
     </section>
     <section class="body">
-      {{=it.body}}
+      <!-- {{=it.body}} -->
+      <div class="body-container"></div>
     </section>
     <script data-main="/scripts/main" src="/scripts/modules/vendor/requirejs/require.js"></script>
   </body>

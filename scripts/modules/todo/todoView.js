@@ -18,18 +18,17 @@ define([
 
   return Backbone.View.extend({
 
-    el: '.body-container',
-
     initialize: function(model) {
       this.model = model;
-      model.on({
-        'change:title' : this.titleUpdate,
-        'change:description' : this.descriptionUpdate
-      });
+      // model.on({
+      //   'change:title' : this.titleUpdate,
+      //   'change:description' : this.descriptionUpdate
+      // });
     },
 
     events: {
       'click .red-button' : 'delete',
+      'click .green-button' : 'navigateBack',
       'dblclick .title' : 'edit',
       'dblclick .description' : 'edit',
       'click .save>.one-button>.green-button' : 'saveEdit',
@@ -63,6 +62,7 @@ define([
     },
 
     saveEdit: function() {
+      var _this = this;
       var title = this.$('.edit-title').val(),
           description = this.$('.edit-description').val();
       console.log(this.model.toJSON());
@@ -75,14 +75,16 @@ define([
         });
         this.model.save(null, {
           success: function() {
-            this.$('.title-editing').addClass('title');
-            this.$('.title').removeClass('title-editing');
-            this.$('.description-editing').addClass('description');
-            this.$('.description').removeClass('description-editing');
-            this.$('.one-button').addClass('hidden-button');
-            this.$('.two-buttons').removeClass('hidden-button');
-            this.$('.title>p').html(title);
-            this.$('.description>p').html(description);
+            // this.$('.title-editing').addClass('title');
+            // this.$('.title').removeClass('title-editing');
+            // this.$('.description-editing').addClass('description');
+            // this.$('.description').removeClass('description-editing');
+            // this.$('.one-button').addClass('hidden-button');
+            // this.$('.two-buttons').removeClass('hidden-button');
+            // this.$('.title>p').html(title);
+            // this.$('.description>p').html(description);
+            $('.body-container').empty();
+            navigate('todos/' + _this.model.get('id'));
           }
         });
 
@@ -125,13 +127,16 @@ define([
       if(e.which == 13 && this.$('.edit-title').val().trim()){
         $('.edit-description').focus();
       }
-    }
+    },
     // titleUpdate: function(title) {
     //   // console.log(title);
     //   this.set({
     //     title: title
     //   })
     // }
+    navigateBack: function() {
+      navigate('');
+    }
   });
 
 });

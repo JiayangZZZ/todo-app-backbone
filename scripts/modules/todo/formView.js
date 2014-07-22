@@ -15,8 +15,6 @@ define([
 
   return Backbone.View.extend({
 
-    el: '.body-container',
-
     initialize: function(model) {
       $('.input-todo-title').focus();
       this.model = model;
@@ -24,7 +22,7 @@ define([
 
     events: {
       'keypress .input-todo-title' : 'moveToDes',
-      'click .one-button>.green-button' : 'saveNew'
+      'click .one-button' : 'saveNew'
     },
 
     moveToDes: function(e) {
@@ -53,7 +51,6 @@ define([
             navigate('todos/'+_this.model.get('id'));
           }
         });
-
       }
       else {
         alert('Title must not be empty.');

@@ -3,14 +3,16 @@ define([
 
   'backbone',
   'todo/todos',
-  'todo/todoView'
+  'todo/todoView',
+  'tmpl'
 
 ],
 function(
 
   Backbone,
   Todos,
-  TodoView
+  TodoView,
+  tmpl
 
 ){
   /**
@@ -22,26 +24,41 @@ function(
 
   return Backbone.View.extend({
 
-    el: '.body-container',
-
     initialize: function(collection) {
       this.$todoList = $('.todo-list');
       this.collection = collection;
-      this.listenTo(collection, 'add', this.addOne);
+      // this.listenTo(collection, 'add', this.addOne);
       // collection.on('remove', this.removeOne);
       this.listenTo(this.collection, 'remove', this.removeOne);
     },
 
     events: {
-      'click .todo-list-item' : 'todoNavigate'
+      'click .todo-list-item' : 'navigateTodo',
+      'click .green-button' : 'navigateCreate'
     },
 
-    render: function() {
-
+    /**
+     * To HTML
+     *
+     * @return {string}
+     * @api public
+     */
+    toHTML: function() {
+      var html = '';
       this.collection.forEach(function(todo) {
         var todoView = new TodoView(todo);
-        $('.todo-list').append(todoView.toHTML());
+        html += todoView.toHTML();
       });
+      return html;
+    },
+
+    /**
+     * Bind DOM
+     *
+     *
+     */
+    bindDOM: function() {
+
     },
 
     addOne: function(todo) {
@@ -50,12 +67,19 @@ function(
     },
 
     removeOne: function() {
-      alert('removed one!');
+      console.log('removing from collection...');
+
     },
 
-    todoNavigate: function() {
-      console.log('clicked.');
-      alert('clicked!');
+    navigateTodo: function(e) {
+      e.preventDefault();
+      var id = $(e.currentTarget).attr('id');
+      console.log('Clicked todo: '+id);
+      navigate('todos/'+id);
+    },
+
+    navigateCreate: function() {
+      navigate('create');
     }
 
   });
