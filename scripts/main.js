@@ -3,7 +3,7 @@
 requirejs.config({
   baseUrl : '/scripts/modules',
   paths : {
-    jquery : "vendor/jquery/dist/jquery",
+    jquery : "vendor/jquery/jquery",
     backbone : "vendor/backbone/backbone",
     underscore : "vendor/underscore/underscore",
     superagent : 'vendor/superagent'
@@ -51,6 +51,7 @@ require([
   window.app = {
     models: {}
   };
+  app.models.todos = new Todos();
 
   /**
    * Router Instantiation

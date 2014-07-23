@@ -34,8 +34,7 @@ define([
     getTodos: function() {
       $('.body-container').empty();
       $('.body-container').append(tmpl.todosTemplate());
-
-      app.models.todos = new Todos();
+      // app.models.todos = new Todos();
       app.models.todos.fetch({
         success: function() {
           var todosView = new TodosView(app.models.todos);
@@ -55,6 +54,7 @@ define([
         success: function() {
           // console.log(todo);
           var todoView = new TodoView(todo);
+          console.log(todoView);
           $('.body-container').append(todoView.todoToHTML());
           todoView.setElement('.todo');
           console.log(todoView.el);

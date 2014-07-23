@@ -29,25 +29,24 @@ define([
     events: {
       'click .red-button' : 'delete',
       'click .green-button' : 'navigateBack',
-      'dblclick .title' : 'edit',
-      'dblclick .description' : 'edit',
+      'click .title' : 'edit',
+      'click .description' : 'edit',
       'click .save>.one-button>.green-button' : 'saveEdit',
       'keypress .title-editing' : 'moveToDes'
     },
 
-    delete: function() {
-      console.log('app.models.todos: '+app.models.todos);
-      this.model.destroy();
-      console.log('This.model.destroy().. app.models.todos: '+app.models.todos);
-      console.log('this.model.id: '+this.model.id);
-      app.models.todos.remove(this.model.id);
-      console.log('removed i hope.');
-      console.log(app.models.todos.toJSON());
-        console.log('asdfasdf');
-        $('.body-container').empty();
-        $('.body-container').append('<div class="button">');
-        $('.body-container').append('<ul class="todo-list">');
-        navigate('');
+    'delete': function() {
+      this.model.destroy({
+        success: function() {
+          app.models.todos.remove(this.model);
+          console.log(app.models.todos.toJSON());
+          $('.body-container').empty();
+          $('.body-container').append('<div class="button">');
+          $('.body-container').append('<ul class="todo-list">');
+          navigate('');
+        }
+      });
+
     },
 
     edit: function() {

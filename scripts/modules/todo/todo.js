@@ -71,13 +71,15 @@ define([
         break;
         case 'delete':
           request
-            .del(this.url());
-            console.log('hej');
-            options.success();
+            .del(this.url())
+            .end(function(err, res) {
+              if(err)
+                console.log('DELETE error!');
+              console.log('hej');
+              options.success();
+            });
         break;
       }
-
-      Backbone.Model.prototype.sync.apply(this, arguments);
     }
   });
 });

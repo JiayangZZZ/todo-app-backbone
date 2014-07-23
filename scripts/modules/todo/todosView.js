@@ -49,6 +49,7 @@ function(
         var todoView = new TodoView(todo);
         html += todoView.toHTML();
       });
+      console.log(html);
       return html;
     },
 
@@ -66,14 +67,17 @@ function(
       // _this.$todoList.append(todoView.toHTML());
     },
 
-    removeOne: function() {
-      console.log('removing from collection...');
+    removeOne: function(models) {
+      var _this = this;
+      // console.log('selected element: ');
+      // console.log($('[data-id=' + models.id + ']'));
+      // console.log('removing from collection...');
 
     },
 
     navigateTodo: function(e) {
       e.preventDefault();
-      var id = $(e.currentTarget).attr('id');
+      var id = $(e.currentTarget).attr('data-id');
       console.log('Clicked todo: '+id);
       navigate('todos/'+id);
     },
