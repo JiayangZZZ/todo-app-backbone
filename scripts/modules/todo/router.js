@@ -32,7 +32,6 @@ define([
 
     //fetch the todo list
     getTodos: function() {
-<<<<<<< HEAD
       $('.body-container').empty();
       $('.body-container').append(tmpl.todosTemplate());
       // app.models.todos = new Todos();
