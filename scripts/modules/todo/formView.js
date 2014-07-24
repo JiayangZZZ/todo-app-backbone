@@ -22,7 +22,8 @@ define([
 
     events: {
       'keypress .input-todo-title' : 'moveToDes',
-      'click .one-button' : 'saveNew'
+      'click .two-buttons>.green-button' : 'saveNew',
+      'click .two-buttons>.red-button' : 'navigateBack'
     },
 
     moveToDes: function(e) {
@@ -65,6 +66,10 @@ define([
      */
     toHTML: function() {
       return $('.body-container').html(tmpl.createTemplate());
+    },
+
+    navigateBack: function() {
+      navigate('');
     }
   });
 

@@ -10,7 +10,12 @@
     <textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!">
     </textarea>
   </div>
-  <div class="one-button">
+  <div class="two-buttons">
+    <div class="red-button">
+      <a>
+        <p class="red-button-text">BACK</p>
+      </a>
+    </div>
     <div class="green-button">
       <a>
         <p class="green-button-text">SAVE</p>

@@ -3,7 +3,7 @@ function encodeHTMLSource() {  var encodeHTMLRules = { "&": "&#38;", "<": "&#60;
 String.prototype.encodeHTML=encodeHTMLSource();
 var tmpl = {};
   tmpl['createTemplate']=function anonymous(it) {
-var out='<!-- template for creating todo --><div class="form"><div class="create-title"><input name="title" class="input-todo-title" type="text" placeholder="Title here"></input></div><div class="create-description"><textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!"></textarea></div><div class="one-button"><div class="green-button"><a><p class="green-button-text">SAVE</p></a></div></div></div>';return out;
+var out='<!-- template for creating todo --><div class="form"><div class="create-title"><input name="title" class="input-todo-title" type="text" placeholder="Title here"></input></div><div class="create-description"><textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!"></textarea></div><div class="two-buttons"><div class="red-button"><a><p class="red-button-text">BACK</p></a></div><div class="green-button"><a><p class="green-button-text">SAVE</p></a></div></div></div>';return out;
 };
   tmpl['header']=function anonymous(it) {
 var out='<!--header--><div class="landing-header-container"><h1 class="header">'+(it.title)+'</h1></div>';return out;
