@@ -54,7 +54,6 @@ define([
         success: function() {
           // console.log(todo);
           var todoView = new TodoView(todo);
-<<<<<<< HEAD
           console.log(todoView);
           $('.body-container').append(todoView.todoToHTML());
           todoView.setElement('.todo');
@@ -67,7 +66,6 @@ define([
     create: function() {
       $('.body-container').empty();
       var todo = new Todo();
-<<<<<<< HEAD
       var form = new FormView(todo);
       form.toHTML();
       form.setElement('.form');

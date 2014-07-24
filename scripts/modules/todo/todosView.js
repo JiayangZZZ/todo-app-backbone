@@ -37,7 +37,6 @@ function(
       'click .green-button' : 'navigateCreate'
     },
 
-<<<<<<< HEAD
     /**
      * To HTML
      *
