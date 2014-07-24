@@ -47,7 +47,7 @@ define([
 
     //fetch one todo
     getOneTodo:  function(id) {
-      // $('.body-container').empty();
+      $('.body-container').empty();
       var todo = new Todo();
       todo.id = id;
       todo.fetch({
