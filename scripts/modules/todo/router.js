@@ -32,6 +32,7 @@ define([
 
     //fetch the todo list
     getTodos: function() {
+<<<<<<< HEAD
       $('.body-container').empty();
       $('.body-container').append(tmpl.todosTemplate());
       // app.models.todos = new Todos();
@@ -47,13 +48,14 @@ define([
 
     //fetch one todo
     getOneTodo:  function(id) {
-      $('.body-container').empty();
+      // $('.body-container').empty();
       var todo = new Todo();
       todo.id = id;
       todo.fetch({
         success: function() {
           // console.log(todo);
           var todoView = new TodoView(todo);
+<<<<<<< HEAD
           console.log(todoView);
           $('.body-container').append(todoView.todoToHTML());
           todoView.setElement('.todo');
@@ -66,6 +68,7 @@ define([
     create: function() {
       $('.body-container').empty();
       var todo = new Todo();
+<<<<<<< HEAD
       var form = new FormView(todo);
       form.toHTML();
       form.setElement('.form');

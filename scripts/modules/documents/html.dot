@@ -15,7 +15,9 @@
       {{=it.header}}
     </section>
     <section class="body">
-      <!-- {{=it.body}} -->
+<<<<<<< HEAD
+
+>>>>>>> 2c614c266a43e71a9bb65f4c414c4224c3734a22
       <div class="body-container"></div>
     </section>
     <script data-main="/scripts/main" src="/scripts/modules/vendor/requirejs/require.js"></script>

@@ -1,6 +1,7 @@
 
 <!-- template for creating todo -->
 
+<<<<<<< HEAD
 <div class="form">
   <div class="create-title">
     <input name="title" class="input-todo-title" type="text" placeholder="Title here">
@@ -10,6 +11,7 @@
     <textarea name="description" class="input-todo-description" type="text" placeholder="Write some details about this!">
     </textarea>
   </div>
+<<<<<<< HEAD
   <div class="two-buttons">
     <div class="red-button">
       <a>

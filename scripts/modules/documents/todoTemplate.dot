@@ -11,6 +11,7 @@
     <textarea class="edit-description">{{=it.description}}</textarea>
   </div>
   <div class="two-buttons">
+<<<<<<< HEAD
     <div class="red-button">
       <a>
         <p class="red-button-text">DELETE</p>
@@ -29,6 +30,7 @@
           <p class="green-button-text">SAVE</p>
         </a>
       </div>
+
     </div>
   </div>
 </div>

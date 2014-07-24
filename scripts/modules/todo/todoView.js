@@ -35,6 +35,7 @@ define([
       'keypress .title-editing' : 'moveToDes'
     },
 
+<<<<<<< HEAD
     'delete': function() {
       this.model.destroy({
         success: function() {
@@ -46,7 +47,6 @@ define([
           navigate('');
         }
       });
-
     },
 
     edit: function() {

@@ -65,6 +65,7 @@ define([
      * @api public
      */
     toHTML: function() {
+<<<<<<< HEAD
       return $('.body-container').html(tmpl.createTemplate());
     },
 

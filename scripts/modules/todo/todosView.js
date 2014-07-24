@@ -25,11 +25,11 @@ function(
   return Backbone.View.extend({
 
     initialize: function(collection) {
-      this.$todoList = $('.todo-list');
+      // this.$todoList = $('.todo-list');
       this.collection = collection;
       // this.listenTo(collection, 'add', this.addOne);
       // collection.on('remove', this.removeOne);
-      this.listenTo(this.collection, 'remove', this.removeOne);
+      // this.listenTo(this.collection, 'remove', this.removeOne);
     },
 
     events: {
@@ -37,6 +37,7 @@ function(
       'click .green-button' : 'navigateCreate'
     },
 
+<<<<<<< HEAD
     /**
      * To HTML
      *
