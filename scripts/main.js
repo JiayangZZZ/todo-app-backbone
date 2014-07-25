@@ -54,6 +54,27 @@ require([
   app.models.todos = new Todos();
 
   /**
+   * IE detector
+   */
+
+  var ie = (function(){
+    console.log('detecting IE..');
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+            all[0]
+        );
+    if (Function('/*@cc_on return document.documentMode===10@*/')()){
+        v = 10;
+    }
+    console.log(v);
+    return v > 4 ? v : undef;
+  }());
+
+  /**
    * Router Instantiation
    */
 
