@@ -74,6 +74,12 @@ require([
     return v > 4 ? v : undef;
   }());
 
+  if (ie) {
+    $.ajaxSetup({ cache: false });
+    jQuery.support.cors = true;
+    console.log('ie');
+  }
+
   /**
    * Router Instantiation
    */
