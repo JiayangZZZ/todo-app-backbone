@@ -73,14 +73,6 @@ define([
         });
         this.model.save(null, {
           success: function() {
-            // this.$('.title-editing').addClass('title');
-            // this.$('.title').removeClass('title-editing');
-            // this.$('.description-editing').addClass('description');
-            // this.$('.description').removeClass('description-editing');
-            // this.$('.one-button').addClass('hidden-button');
-            // this.$('.two-buttons').removeClass('hidden-button');
-            // this.$('.title>p').html(title);
-            // this.$('.description>p').html(description);
             $('.body-container').empty();
             navigate('todos/' + _this.model.get('id'));
           }

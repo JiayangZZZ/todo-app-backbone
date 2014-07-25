@@ -49,7 +49,6 @@ function(
         var todoView = new TodoView(todo);
         html += todoView.toHTML();
       });
-      console.log(html);
       return html;
     },
 
