@@ -9,6 +9,7 @@
     <link href="../public/styles/build/styles.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/public/images/icon.ico">
     <link rel="icon" type="image/x-icon" href="/public/images/icon.ico">
+    <script src="/scripts/modules/vendor/modernizr/modernizr.js"></script>
   </head>
   <body>
     <section class="header">
