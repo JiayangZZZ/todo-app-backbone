@@ -1,3 +1,4 @@
+@import "compass/css3";
 
 .header {
   text-align: center;
@@ -56,20 +57,33 @@
   padding: 10px 0;
 }
 
-.real-todo-list {
-  padding: 10px 50px;
-}
-
 .new-todo {
   width: 90%;
   height: 30px;
 }
 
 .todo-list-item {
+  font-size: 16px;
   margin: 0 40px;
-  padding-top: 20px;
-  padding-bottom: 5px;
+  padding: 20px 10px 5px 10px;
   border-bottom: 1px solid #efefef;
+
+  &:hover {
+    padding: 10px;
+    font-size: 28px;
+    @include single-box-shadow(#333333, 0, 0, 40px, false, false);
+  }
+
+  .csstransitions & {
+    @include transition-property(padding, font-size, box-shadow);
+    @include transition-duration(0.3s);
+  }
+
+  .no-csstransitions & {
+    &:hover{
+      border: solid black 2px;
+    }
+  }
 }
 
 .title {
@@ -160,10 +174,13 @@
 
 .green-button {
   border: solid #27cd00 1px;
-  border-radius: 5px;
   overflow: hidden;
   display: inline-block;
   margin: 10px;
+
+  .borderradius & {
+    border-radius: 5px;
+  }
 }
 
 .green-button-text {

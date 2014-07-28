@@ -27,9 +27,11 @@ function(
     initialize: function(collection) {
       // this.$todoList = $('.todo-list');
       this.collection = collection;
-      // this.listenTo(collection, 'add', this.addOne);
-      // collection.on('remove', this.removeOne);
-      // this.listenTo(this.collection, 'remove', this.removeOne);
+      // $('.todo-list-item').on({
+      //   'mouseover' : function() {
+      //     console.log('MOUSE OVER!');
+      //   }
+      // })
     },
 
     events: {
